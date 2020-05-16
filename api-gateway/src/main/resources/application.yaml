@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-gateway
+  zipkin:
+    base-url: http://zipkin:9411
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+
+zuul:
+  routes:
+    product-service:
+      path: /product/**
+    order-service:
+      path: /order/**

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: order-service
+
+  zipkin:
+    base-url: http://zipkin:9411
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  data:
+    mongodb:
+      authentication-database: admin
+      host: mongodb
+      port: 27017
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
+      database: ${MONGO_DATABASE}
+server:
+  port: ${PORT:8080}
